@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import '../widgets/my_drawer.dart';
 import 'home_screen.dart';
 import 'chart_screen.dart';
+import 'nutrition_screen.dart';
+import 'tips_screen.dart';
 
 class NavigationBarScreen extends StatefulWidget {
   static const routeName = '/nav-bar';
@@ -14,11 +16,11 @@ class NavigationBarScreen extends StatefulWidget {
 
 class _NavigationBarScreenState extends State<NavigationBarScreen> {
   var selectedIndex = 0;
-  static List<Widget> screens = [
+  static const List<Widget> screens = [
     HomeScreen(),
     ChartScreen(),
-    Center(),
-    Center(),
+    NutritionScreen(),
+    TipsScreen(),
   ];
 
   Widget buildIcon(IconData icon) {
