@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 
 import 'theme.dart';
 import 'providers/glucose_level.dart';
+import 'providers/insulin.dart';
 import 'screens/nav_bar.dart';
 
 void main() {
@@ -17,6 +18,7 @@ class MyApp extends StatelessWidget {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (context) => GlucoseLevel()),
+        ChangeNotifierProvider(create: (context) => Insulin()),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,

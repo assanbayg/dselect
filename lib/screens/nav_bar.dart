@@ -1,5 +1,8 @@
-import 'package:dselect/screens/home_screen.dart';
 import 'package:flutter/material.dart';
+
+import '../widgets/my_drawer.dart';
+import 'home_screen.dart';
+import 'chart_screen.dart';
 
 class NavigationBarScreen extends StatefulWidget {
   static const routeName = '/nav-bar';
@@ -13,7 +16,7 @@ class _NavigationBarScreenState extends State<NavigationBarScreen> {
   var selectedIndex = 0;
   static List<Widget> screens = [
     HomeScreen(),
-    Center(),
+    ChartScreen(),
     Center(),
     Center(),
   ];
@@ -75,6 +78,7 @@ class _NavigationBarScreenState extends State<NavigationBarScreen> {
           ),
         ),
       ),
+      drawer: MyDrawer(),
     );
   }
 }
