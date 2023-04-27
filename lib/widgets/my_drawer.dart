@@ -17,7 +17,7 @@ class MyDrawer extends StatelessWidget {
 
     return SafeArea(
       child: Drawer(
-        width: MediaQuery.of(context).size.width * 0.6,
+        width: MediaQuery.of(context).size.width * 0.75,
         shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.only(
             topRight: Radius.circular(30),
@@ -25,7 +25,11 @@ class MyDrawer extends StatelessWidget {
           ),
         ),
         child: Column(children: [
-          buildListTile('User', Icons.account_circle_rounded, () {}),
+          buildListTile(
+            'User',
+            Icons.account_circle_rounded,
+            () {},
+          ),
           const Divider(thickness: 2),
           buildListTile('Notifications', Icons.notifications_rounded, () {}),
         ]),

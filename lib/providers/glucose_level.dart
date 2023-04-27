@@ -55,4 +55,10 @@ class GlucoseLevel with ChangeNotifier {
     }
     return minVal;
   }
+
+  void addNewValue(double newVal) {
+    glucoseLevelList.add(newVal);
+    glucoseLevelList.removeAt(0);
+    notifyListeners();
+  }
 }

@@ -12,28 +12,40 @@ class HomeScreen extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
-        title: Text('Hello, Venera', style: theme.textTheme.headlineSmall),
+        leading: IconButton(
+          onPressed: () => Scaffold.of(context).openDrawer(),
+          icon: Icon(
+            Icons.menu_rounded,
+            color: theme.primaryColor,
+          ),
+        ),
+        title: Text(
+          'Welcome back!\nVenera',
+          style: theme.textTheme.headlineSmall,
+        ),
+        actions: [
+          Container(
+            padding: const EdgeInsets.all(10),
+            margin: const EdgeInsets.symmetric(horizontal: 10),
+            decoration: const BoxDecoration(shape: BoxShape.circle),
+            child: Icon(
+              Icons.notifications_rounded,
+              color: Theme.of(context).primaryColor,
+              size: 35,
+            ),
+          ),
+        ],
         backgroundColor: Colors.transparent,
+        toolbarHeight: size.height * 0.1,
         elevation: 0,
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 10),
         child: SingleChildScrollView(
           child: Column(
-            children: [
-              const CircleChart(),
-              //const GlucoseLevelEnter(),
-              const InsulinEnter(),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  TextButton(
-                    onPressed: () {},
-                    child: const Text('History',
-                        style: TextStyle(color: Colors.grey)),
-                  ),
-                ],
-              ),
+            children: const [
+              CircleChart(),
+              InsulinEnter(),
             ],
           ),
         ),

@@ -10,7 +10,16 @@ class MyAppBar extends StatelessWidget with PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      title: Text(title),
+      leading: IconButton(
+        onPressed: () => Scaffold.of(context).openDrawer(),
+        icon: const Icon(
+          Icons.menu_rounded,
+          color: Colors.white,
+        ),
+      ),
+      title: Text(
+        title,
+      ),
       centerTitle: true,
       backgroundColor: Theme.of(context).primaryColor,
     );

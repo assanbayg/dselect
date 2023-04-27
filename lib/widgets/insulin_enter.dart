@@ -1,11 +1,17 @@
+import 'package:dselect/providers/glucose_level.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../providers/insulin.dart';
 
-class InsulinEnter extends StatelessWidget {
+class InsulinEnter extends StatefulWidget {
   const InsulinEnter({super.key});
 
+  @override
+  State<InsulinEnter> createState() => _InsulinEnterState();
+}
+
+class _InsulinEnterState extends State<InsulinEnter> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -22,7 +28,7 @@ class InsulinEnter extends StatelessWidget {
       ),
       padding: EdgeInsets.all(size.height * 0.02),
       decoration: BoxDecoration(
-        color: Colors.grey.shade200,
+        color: Theme.of(context).primaryColor.withOpacity(0.1),
         borderRadius: BorderRadius.circular(30),
       ),
       child: Column(
@@ -73,7 +79,6 @@ class InsulinEnter extends StatelessWidget {
               ),
             ],
           ),
-          const Divider(thickness: 2),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -85,8 +90,13 @@ class InsulinEnter extends StatelessWidget {
                   SizedBox(
                     width: size.width * 0.15,
                     child: TextField(
-                        keyboardType: TextInputType.number,
-                        style: Theme.of(context).textTheme.bodyMedium),
+                      keyboardType: TextInputType.number,
+                      style: Theme.of(context).textTheme.bodyMedium,
+                      onSubmitted: (value) {
+                        Provider.of<GlucoseLevel>(context, listen: false)
+                            .addNewValue(double.parse(value));
+                      },
+                    ),
                   ),
                 ],
               ),

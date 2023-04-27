@@ -1,17 +1,18 @@
 import 'package:flutter/material.dart';
 
 const double largeTextSize = 26;
-const double mediumTextSize = 20;
-const double smallTextSize = 16;
+const double mediumTextSize = 18;
+const double smallTextSize = 14;
 
-const String fontNameDefault = 'Quicksand';
+const String fontNameDefault = 'Poppins';
 const String fontNameTitle = '';
 
 const Color colorText = Colors.black;
+const Color primaryColor = Color.fromRGBO(110, 81, 208, 1);
 
 ThemeData basisTheme() => ThemeData(
       brightness: Brightness.light,
-      primaryColor: Colors.blue.shade700,
+      primaryColor: primaryColor,
       scaffoldBackgroundColor: Colors.white,
       fontFamily: fontNameDefault,
       textTheme: const TextTheme(
@@ -55,7 +56,7 @@ ThemeData basisTheme() => ThemeData(
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
           fixedSize: const Size(120, 50),
-          backgroundColor: Colors.blue.shade800,
+          backgroundColor: primaryColor,
           foregroundColor: Colors.white,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(20),

@@ -12,8 +12,11 @@ class ChartScreen extends StatelessWidget {
     return Scaffold(
       appBar: MyAppBar(title: 'Analytics'),
       body: Column(
-        children: [
-          Padding(padding: EdgeInsets.all(10), child: GlucoseLineChart()),
+        children: const [
+          Padding(
+            padding: EdgeInsets.all(10),
+            child: GlucoseLineChart(),
+          ),
           GlucoseStatus(),
         ],
       ),

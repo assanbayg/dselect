@@ -26,17 +26,25 @@ class _NavigationBarScreenState extends State<NavigationBarScreen> {
   Widget buildIcon(IconData icon) {
     return Icon(
       icon,
-      color: Theme.of(context).primaryColor,
       size: MediaQuery.of(context).size.height * 0.04,
+    );
+  }
+
+  Widget buildAssetIcon(String assetName) {
+    return ImageIcon(
+      AssetImage(assetName),
+      size: MediaQuery.of(context).size.height * 0.03,
     );
   }
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
+
     return Scaffold(
       body: screens[selectedIndex],
       bottomNavigationBar: Container(
-        height: MediaQuery.of(context).size.height * 0.08,
+        height: size.height * 0.1,
         decoration: const BoxDecoration(
           borderRadius: BorderRadius.only(
               topRight: Radius.circular(30), topLeft: Radius.circular(30)),
@@ -53,15 +61,14 @@ class _NavigationBarScreenState extends State<NavigationBarScreen> {
             showSelectedLabels: false,
             showUnselectedLabels: false,
             currentIndex: selectedIndex,
-            unselectedItemColor: Colors.black,
-            selectedIconTheme:
-                IconThemeData(color: Theme.of(context).primaryColor),
+            unselectedItemColor: Colors.grey,
+            selectedItemColor: Theme.of(context).primaryColor,
             onTap: (value) => setState(() {
               selectedIndex = value;
             }),
             items: [
               BottomNavigationBarItem(
-                icon: buildIcon(Icons.home_rounded),
+                icon: buildAssetIcon('assets/icons/home.png'),
                 label: 'Home',
               ),
               BottomNavigationBarItem(
