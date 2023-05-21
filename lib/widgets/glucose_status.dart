@@ -35,7 +35,9 @@ class _GlucoseStatusState extends State<GlucoseStatus> {
               Text('Min: $min', style: style),
             ],
           ),
-          Text('Current: $value', style: style),
+          Text(
+              'Current: ${Provider.of<GlucoseLevel>(context).glucoseLevelList.last}',
+              style: style),
         ],
       ),
     );

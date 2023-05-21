@@ -1,5 +1,6 @@
 // ignore_for_file: use_build_context_synchronously, avoid_print
 import 'package:dselect/screens/nav_bar.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import '../screens/welcome_screen.dart';
@@ -45,11 +46,12 @@ class _SignUpScreenState extends State<SignUpScreen> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text('Please join us!', style: theme.textTheme.headlineSmall),
+                  Text(AppLocalizations.of(context).pleaseJoinUs,
+                      style: theme.textTheme.headlineSmall),
                   const SizedBox(height: 20),
-                  const Text(
-                    'Name',
-                    style: TextStyle(
+                  Text(
+                    AppLocalizations.of(context).nameOfPerson,
+                    style: const TextStyle(
                       fontWeight: FontWeight.w700,
                       fontSize: 18,
                     ),
@@ -59,9 +61,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     style: theme.textTheme.bodyMedium,
                   ),
                   const SizedBox(height: 10),
-                  const Text(
-                    'Surname',
-                    style: TextStyle(
+                  Text(
+                    AppLocalizations.of(context).surname,
+                    style: const TextStyle(
                       fontWeight: FontWeight.w700,
                       fontSize: 18,
                     ),
@@ -71,9 +73,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     style: theme.textTheme.bodyMedium,
                   ),
                   const SizedBox(height: 10),
-                  const Text(
-                    'E-mail',
-                    style: TextStyle(
+                  Text(
+                    AppLocalizations.of(context).email,
+                    style: const TextStyle(
                       fontWeight: FontWeight.w700,
                       fontSize: 18,
                     ),
@@ -83,9 +85,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     style: theme.textTheme.bodyMedium,
                   ),
                   const SizedBox(height: 10),
-                  const Text(
-                    'Password',
-                    style: TextStyle(
+                  Text(
+                    AppLocalizations.of(context).password,
+                    style: const TextStyle(
                       fontWeight: FontWeight.w700,
                       fontSize: 18,
                     ),
@@ -100,9 +102,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   const SizedBox(height: 20),
                   Row(
                     children: [
-                      const Text(
-                        'Date of birth: ',
-                        style: TextStyle(
+                      Text(
+                        AppLocalizations.of(context).dateOFBirth,
+                        style: const TextStyle(
                           fontWeight: FontWeight.w700,
                           fontSize: 18,
                         ),
@@ -143,7 +145,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           } else {}
                         },
                         child: Text(_dateInput.text == ""
-                            ? 'DD/MM/YYYY'
+                            ? AppLocalizations.of(context).dayMonthYear
                             : _dateInput.text),
                       ),
                     ],

@@ -1,4 +1,5 @@
 import 'package:dselect/screens/welcome_screen.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter/material.dart';
 import '../screens/nav_bar.dart';
 import 'auth_services.dart';
@@ -41,11 +42,12 @@ class _LoginScreenState extends State<LoginScreen> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text('Please sign in!', style: theme.textTheme.headlineSmall),
+                  Text(AppLocalizations.of(context).pleaseSignIn,
+                      style: theme.textTheme.headlineSmall),
                   const SizedBox(height: 20),
-                  const Text(
-                    'E-mail',
-                    style: TextStyle(
+                  Text(
+                    AppLocalizations.of(context).email,
+                    style: const TextStyle(
                       fontWeight: FontWeight.w700,
                       fontSize: 18,
                     ),
@@ -54,9 +56,9 @@ class _LoginScreenState extends State<LoginScreen> {
                     controller: _emailController,
                   ),
                   const SizedBox(height: 10),
-                  const Text(
-                    'Password',
-                    style: TextStyle(
+                  Text(
+                    AppLocalizations.of(context).password,
+                    style: const TextStyle(
                       fontWeight: FontWeight.w700,
                       fontSize: 18,
                     ),
@@ -84,7 +86,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 ScaffoldMessenger.of(context)
                     .showSnackBar(SnackBar(content: Text(message)));
               },
-              child: const Text('Sign in'),
+              child: Text(AppLocalizations.of(context).signin),
             ),
           ]),
         ),

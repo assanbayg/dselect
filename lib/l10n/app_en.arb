@@ -1,0 +1,16 @@
+{
+  "login": "Login",
+  "@login": {
+    "description": "The conventional newborn programmer greeting"
+  },
+  "signup": "Sign Up",
+  "pleaseSignIn": "Please sign in!",
+  "email": "E-mail",
+  "password": "Password",
+  "signin": "Sign In",
+  "nameOfPerson": "Name",
+  "surname": "Surname",
+  "dateOFBirth": "Date Of Birth:",
+  "dayMonthYear": "DD/MM/YY",
+  "pleaseJoinUs": "Please join us!"
+}

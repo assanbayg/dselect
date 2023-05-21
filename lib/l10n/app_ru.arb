@@ -1,0 +1,13 @@
+{
+  "login": "Войти",
+  "signup": "Зарегестрироваться",
+  "pleaseSignIn": "Пожалуйста, войдите!",
+  "email": "Электронная почта",
+  "password": "Пароль",
+  "signin": "Войти",
+  "nameOfPerson": "Имя",
+  "surname": "Фамилия",
+  "dateOFBirth": "Дата рождения:",
+  "dayMonthYear": "ДД/ММ/ЯЯ",
+  "pleaseJoinUs": "Присоединятесь к нам!"
+}

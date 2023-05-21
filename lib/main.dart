@@ -1,4 +1,6 @@
 import 'package:dselect/screens/welcome_screen.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -6,6 +8,7 @@ import 'package:provider/provider.dart';
 import 'auth/login_screen.dart';
 import 'auth/sign_up_screen.dart';
 import 'firebase_options.dart';
+import 'screens/insulin_history_screen.dart';
 import 'theme.dart';
 import 'providers/glucose_level.dart';
 import 'providers/insulin.dart';
@@ -34,6 +37,19 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (context) => Nutrition()),
       ],
       child: MaterialApp(
+        //         localizationsDelegates: AppLocalizations.localizationsDelegates,
+        // supportedLocales: AppLocalizations.supportedLocales,
+        localizationsDelegates: const [
+          AppLocalizations.delegate,
+          GlobalMaterialLocalizations.delegate,
+          GlobalWidgetsLocalizations.delegate,
+          GlobalCupertinoLocalizations.delegate,
+        ],
+        supportedLocales: const [
+          Locale('en'), // English
+          Locale('ru'), // Russian
+          Locale('kk'), //Kazakh
+        ],
         debugShowCheckedModeBanner: false,
         title: 'DSelect',
         theme: basisTheme(),
@@ -46,6 +62,7 @@ class MyApp extends StatelessWidget {
               const NavigationBarScreen(),
           TestScreen.routeName: (context) => const TestScreen(),
           InfoScreen.routeName: (context) => const InfoScreen(),
+          InsulinHistoryScreen.routeName: (context) => InsulinHistoryScreen(),
         },
       ),
     );

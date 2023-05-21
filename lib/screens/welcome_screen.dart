@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import '../auth/login_screen.dart';
 import '../auth/sign_up_screen.dart';
 
@@ -28,14 +28,20 @@ class WelcomeScreen extends StatelessWidget {
             ElevatedButton(
               onPressed: () =>
                   Navigator.of(context).pushNamed(LoginScreen.routeName),
-              child: const Text('Login'),
+              style: ElevatedButton.styleFrom(
+                fixedSize: const Size(220, 50),
+              ),
+              child: Text(AppLocalizations.of(context).login),
             ),
             const SizedBox(height: 15),
             ElevatedButton(
               onPressed: () =>
                   Navigator.of(context).pushNamed(SignUpScreen.routeName),
-              child: const Text('Sign Up'),
-            )
+              style: ElevatedButton.styleFrom(
+                fixedSize: const Size(220, 50),
+              ),
+              child: Text(AppLocalizations.of(context).signup),
+            ),
           ],
         ),
       ),

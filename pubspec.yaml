@@ -39,6 +39,10 @@ dependencies:
   firebase_core: ^2.10.0
   firebase_auth: ^4.4.2
   cloud_firestore: ^4.5.2
+  url_launcher: ^6.1.10
+  flutter_localizations:
+    sdk: flutter
+  intl: any
 
 dev_dependencies:
   flutter_test:
@@ -60,6 +64,7 @@ flutter:
   # included with your application, so that you can use the icons in
   # the material Icons class.
   uses-material-design: true
+  generate: true
 
   # To add assets to your application, add an assets section, like this:
   assets:
@@ -79,13 +84,6 @@ flutter:
   # list giving the asset and other descriptors for the font. For
   # example:
   fonts:
-    - family: Quicksand
-      fonts:
-        - asset: assets/fonts/quicksand/Quicksand-Medium.ttf
-        - asset: assets/fonts/quicksand/Quicksand-Light.ttf
-          weight: 300
-        - asset: assets/fonts/quicksand/Quicksand-Bold.ttf
-          weight: 700
     - family: Poppins
       fonts:
         - asset: assets/fonts/poppins/Poppins-Regular.ttf

@@ -1,17 +1,65 @@
+// ignore_for_file: library_private_types_in_public_api
+
+import 'package:dselect/main.dart';
+import 'package:dselect/widgets/my_app_bar.dart';
 import 'package:flutter/material.dart';
 
-class Insulin with ChangeNotifier {
-  final List<String> _insulinTypes = [
-    'rapid-acting',
-    'short-acting',
-    'intermediate-acting',
-    'mixed',
-    'long-acting',
-  ];
-  List<int> _dose = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+class InsulinHistoryScreen extends StatefulWidget {
+  static const routeName = '/home/history';
+  @override
+  _InsulinHistoryScreenState createState() => _InsulinHistoryScreenState();
+}
 
-  List<String> get insulinTypes => _insulinTypes;
-  List<int> get dose => _dose;
+class _InsulinHistoryScreenState extends State<InsulinHistoryScreen> {
+  List<InsulinEntry> _insulinEntries = [
+    InsulinEntry(DateTime(2023, 4, 27, 8, 0), 25),
+    InsulinEntry(DateTime(2023, 4, 27, 12, 0), 10),
+    InsulinEntry(DateTime(2023, 4, 27, 17, 0), 15),
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: MyAppBar(title: 'Insulin History'),
+      body: ListView.builder(
+        itemCount: _insulinEntries.length,
+        itemBuilder: (BuildContext context, int index) {
+          InsulinEntry insulinEntry = _insulinEntries[index];
+          return ListTile(
+            leading: Text(
+              '${insulinEntry.time.hour}:${insulinEntry.time.minute}',
+              style: const TextStyle(fontSize: 18.0),
+            ),
+            title: Text(
+              '${insulinEntry.units} units',
+              style: const TextStyle(fontSize: 18.0),
+            ),
+            subtitle: Text(
+              insulinEntry.time.toString(),
+              style: const TextStyle(fontSize: 14.0),
+            ),
+          );
+        },
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () async {
+          InsulinEntry newEntry = await Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (BuildContext context) => AddInsulinEntryScreen(),
+            ),
+          );
+          if (newEntry != null) {
+            setState(() {
+              _insulinEntries.add(newEntry);
+            });
+          }
+        },
+        backgroundColor: Theme.of(context).primaryColor,
+        child: const Icon(Icons.add),
+      ),
+    );
+  }
 }
 
 class InsulinEntry {
@@ -33,15 +81,13 @@ class _AddInsulinEntryScreenState extends State<AddInsulinEntryScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Add Insulin Entry'),
-      ),
+      appBar: MyAppBar(title: 'Add insulin enter'),
       body: Padding(
-        padding: EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
+            const Text(
               'Enter the number of units:',
               style: TextStyle(fontSize: 18.0),
             ),
@@ -49,16 +95,16 @@ class _AddInsulinEntryScreenState extends State<AddInsulinEntryScreen> {
               controller: _unitsController,
               keyboardType: TextInputType.number,
             ),
-            SizedBox(height: 16.0),
-            Text(
+            const SizedBox(height: 16.0),
+            const Text(
               'Select the time of your insulin injection:',
               style: TextStyle(fontSize: 18.0),
             ),
-            SizedBox(height: 16.0),
+            const SizedBox(height: 16.0),
             ListTile(
               title: Text(
                 '${_selectedTime.hour}:${_selectedTime.minute}',
-                style: TextStyle(fontSize: 18.0),
+                style: const TextStyle(fontSize: 18.0),
               ),
               onTap: () async {
                 TimeOfDay? selectedTime = await showTimePicker(
@@ -82,6 +128,7 @@ class _AddInsulinEntryScreenState extends State<AddInsulinEntryScreen> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
+        backgroundColor: Theme.of(context).primaryColor,
         onPressed: () {
           String units = _unitsController.text;
           if (units.isEmpty) {
@@ -89,14 +136,14 @@ class _AddInsulinEntryScreenState extends State<AddInsulinEntryScreen> {
               context: context,
               builder: (BuildContext context) {
                 return AlertDialog(
-                  title: Text('Error'),
-                  content: Text('Please enter the number of units.'),
+                  title: const Text('Error'),
+                  content: const Text('Please enter the number of units.'),
                   actions: [
                     TextButton(
                       onPressed: () {
                         Navigator.pop(context);
                       },
-                      child: Text('OK'),
+                      child: const Text('OK'),
                     ),
                   ],
                 );
@@ -110,7 +157,7 @@ class _AddInsulinEntryScreenState extends State<AddInsulinEntryScreen> {
             );
           }
         },
-        child: Icon(Icons.check),
+        child: const Icon(Icons.check),
       ),
     );
   }

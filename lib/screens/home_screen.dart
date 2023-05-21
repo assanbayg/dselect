@@ -1,3 +1,4 @@
+import 'package:dselect/screens/insulin_history_screen.dart';
 import 'package:flutter/material.dart';
 
 import '../widgets/circle_chart.dart';
@@ -24,14 +25,19 @@ class HomeScreen extends StatelessWidget {
           style: theme.textTheme.headlineSmall,
         ),
         actions: [
-          Container(
-            padding: const EdgeInsets.all(10),
-            margin: const EdgeInsets.symmetric(horizontal: 10),
-            decoration: const BoxDecoration(shape: BoxShape.circle),
-            child: Icon(
-              Icons.notifications_rounded,
-              color: Theme.of(context).primaryColor,
-              size: 35,
+          GestureDetector(
+            onTap: () {
+              Navigator.pushNamed(context, InsulinHistoryScreen.routeName);
+            },
+            child: Container(
+              padding: const EdgeInsets.all(10),
+              margin: const EdgeInsets.symmetric(horizontal: 10),
+              decoration: const BoxDecoration(shape: BoxShape.circle),
+              child: Icon(
+                Icons.notifications_rounded,
+                color: Theme.of(context).primaryColor,
+                size: 35,
+              ),
             ),
           ),
         ],

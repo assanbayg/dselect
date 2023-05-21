@@ -1,5 +1,6 @@
 import 'package:dselect/screens/test_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 import '../widgets/my_app_bar.dart';
 
 class TipsScreen extends StatelessWidget {
@@ -21,7 +22,14 @@ class TipsScreen extends StatelessWidget {
             ListTile(
               title: const Text('What is diabetes?'),
               trailing: const Icon(Icons.east),
-              onTap: () {},
+              onTap: () async {
+                final Uri _url = Uri.parse(
+                    'https://www.who.int/news-room/fact-sheets/detail/diabetes');
+
+                if (!await launchUrl(_url)) {
+                  throw Exception('Could not launch $_url');
+                }
+              },
             ),
             ListTile(
               title: const Text('Tips for diabetes management '),
