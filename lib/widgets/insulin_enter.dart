@@ -30,6 +30,9 @@ class _InsulinEnterState extends State<InsulinEnter> {
       decoration: BoxDecoration(
         color: Theme.of(context).primaryColor.withOpacity(0.1),
         borderRadius: BorderRadius.circular(30),
+        border: Border.all(
+          color: Theme.of(context).primaryColor.withOpacity(0.2),
+        ),
       ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceAround,

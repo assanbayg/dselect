@@ -71,6 +71,8 @@ flutter:
     - assets/icons/logo.png
     - assets/icons/home.png
     - assets/icons/user.png
+    - assets/images/mountains_background.png
+    - assets/images/irbis.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
