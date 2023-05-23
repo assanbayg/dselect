@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import '../providers/nutrition.dart';
 import 'food_card.dart';
 
@@ -11,16 +12,9 @@ class Menu extends StatefulWidget {
 
 class _MenuState extends State<Menu> {
   final TextEditingController searchController = TextEditingController();
-  List<Food> duplicateMenu = Food.generateMenu();
   List<Food> menu = [];
-
-  void _filterSearchResults(String name) {
-    setState(() {
-      menu = duplicateMenu
-          .where((food) => food.name.toLowerCase().contains(name.toLowerCase()))
-          .toList();
-    });
-  }
+  List<Food> duplicateMenu = [];
+  bool on = false;
 
   @override
   void initState() {
@@ -30,6 +24,16 @@ class _MenuState extends State<Menu> {
 
   @override
   Widget build(BuildContext context) {
+    duplicateMenu = Provider.of<Nutrition>(context).menu;
+    void _filterSearchResults(String name) {
+      setState(() {
+        menu = duplicateMenu
+            .where(
+                (food) => food.name.toLowerCase().contains(name.toLowerCase()))
+            .toList();
+      });
+    }
+
     return Column(
       children: [
         TextField(
@@ -55,20 +59,30 @@ class _MenuState extends State<Menu> {
           onChanged: (val) => _filterSearchResults(val),
         ),
         SizedBox(height: MediaQuery.of(context).size.height * 0.02),
-        SizedBox(
-          child: SingleChildScrollView(
-            child: Column(
-              children: menu
-                  .map((e) => FoodCard(
-                        name: e.name,
-                        link: e.imageUrl,
-                        bu: e.bu,
-                        kcal: e.totalKcal,
-                      ))
-                  .toList(),
-            ),
-          ),
-        ),
+        on
+            ? SizedBox(
+                child: SingleChildScrollView(
+                  child: Column(
+                    children: menu
+                        .map((e) => FoodCard(
+                              name: e.name,
+                              link: e.imageUrl,
+                              bu: e.bu,
+                              kcal: e.totalKcal,
+                            ))
+                        .toList(),
+                  ),
+                ),
+              )
+            : ElevatedButton(
+                onPressed: () {
+                  setState(() {
+                    on = true;
+                    searchController.text = 'Try';
+                  });
+                },
+                child: const Text('Menu'),
+              ),
       ],
     );
   }

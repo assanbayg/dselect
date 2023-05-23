@@ -1,7 +1,7 @@
 import 'package:dselect/screens/test_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
-import '../widgets/my_app_bar.dart';
+import '../widgets/main_app_bar.dart';
 
 class TipsScreen extends StatelessWidget {
   const TipsScreen({super.key});
@@ -9,7 +9,7 @@ class TipsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: MyAppBar(title: 'Information'),
+      appBar: MainAppBar(title: 'Information'),
       body: Padding(
         padding: const EdgeInsets.all(20),
         child: Column(

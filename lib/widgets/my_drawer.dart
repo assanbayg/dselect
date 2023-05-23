@@ -53,7 +53,7 @@ class _MyDrawerState extends State<MyDrawer> {
         ),
         child: Column(children: [
           buildListTile(
-            _userName!,
+            _userName ?? 'User',
             Icons.account_circle_rounded,
             () {},
           ),

@@ -34,7 +34,9 @@ class MyApp extends StatelessWidget {
       providers: [
         ChangeNotifierProvider(create: (context) => GlucoseLevel()),
         ChangeNotifierProvider(create: (context) => Insulin()),
-        ChangeNotifierProvider(create: (context) => Nutrition()),
+        ChangeNotifierProvider(
+          create: (context) => Nutrition(),
+        ),
       ],
       child: MaterialApp(
         //         localizationsDelegates: AppLocalizations.localizationsDelegates,

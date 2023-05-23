@@ -21,7 +21,7 @@ class HomeScreen extends StatelessWidget {
           ),
         ),
         title: Text(
-          'Welcome back!\nVenera',
+          'Welcome back!',
           style: theme.textTheme.headlineSmall,
         ),
         actions: [
