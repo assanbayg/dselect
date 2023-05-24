@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:dselect/screens/test_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -8,6 +10,15 @@ class TipsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    const List<String> tips = [
+      'Choose healthier carbohydrates',
+      'Eat less salt to lower high blood pressure',
+      'Eat less red and processed meat',
+      'Eat more fruits and vegetables',
+      'Choose healtier fats',
+      'Cut down on added sugar',
+      'Try to avoid fried food since it takes longer to metabolize glucose',
+    ];
     return Scaffold(
       appBar: MainAppBar(title: 'Information'),
       body: Padding(
@@ -31,11 +42,11 @@ class TipsScreen extends StatelessWidget {
                 }
               },
             ),
-            ListTile(
-              title: const Text('Tips for diabetes management '),
-              trailing: const Icon(Icons.east),
-              onTap: () {},
-            ),
+            // ListTile(
+            //   title: const Text('Tips for diabetes management '),
+            //   trailing: const Icon(Icons.east),
+            //   onTap: () {},
+            // ),
             Container(
               width: MediaQuery.of(context).size.width * 0.8,
               padding: const EdgeInsets.all(20),
@@ -43,6 +54,10 @@ class TipsScreen extends StatelessWidget {
               decoration: BoxDecoration(
                 color: Colors.indigo.shade400,
                 borderRadius: BorderRadius.circular(20),
+                border: Border.all(
+                  color: Colors.indigo.shade700,
+                  width: 2,
+                ),
               ),
               child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -54,9 +69,9 @@ class TipsScreen extends StatelessWidget {
                             fontWeight: FontWeight.w700,
                           ),
                     ),
-                    const Text(
-                      'Try to avoid fried food since it takes metabolize glucose',
-                      style: TextStyle(color: Colors.white),
+                    Text(
+                      tips[Random().nextInt(7)],
+                      style: const TextStyle(color: Colors.white),
                     ),
                   ]),
             ),

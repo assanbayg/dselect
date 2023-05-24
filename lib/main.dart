@@ -1,3 +1,4 @@
+import 'package:dselect/providers/lesson.dart';
 import 'package:dselect/screens/welcome_screen.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -35,6 +36,9 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (context) => GlucoseLevel()),
         ChangeNotifierProvider(create: (context) => Insulin()),
         ChangeNotifierProvider(create: (context) => Nutrition()),
+        ChangeNotifierProvider(
+          create: (context) => Lessons(),
+        )
       ],
       child: MaterialApp(
         localizationsDelegates: AppLocalizations.localizationsDelegates,
