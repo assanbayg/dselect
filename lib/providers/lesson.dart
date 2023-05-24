@@ -3,15 +3,20 @@ import 'package:flutter/material.dart';
 
 class Lesson {
   final String title;
-  final bool isCompleted;
+  bool isCompleted;
 
   Lesson(this.title, this.isCompleted);
 }
 
 class Lessons with ChangeNotifier {
   List<Lesson> lessons = [
-    Lesson('1st', true),
-    Lesson('2nd', false),
-    Lesson('3d', false),
+    Lesson('What is Diabetes?', true),
+    Lesson('Carbohydrates and BU', false),
+    Lesson('You can do it!', false),
   ];
+
+  void updateStatus(int index) {
+    lessons[index].isCompleted = true;
+    notifyListeners();
+  }
 }

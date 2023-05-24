@@ -24,6 +24,7 @@ class TipsScreen extends StatelessWidget {
       body: Padding(
         padding: const EdgeInsets.all(20),
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             ListTile(
               title: const Text('Test for type 2 diabetes'),
@@ -75,6 +76,7 @@ class TipsScreen extends StatelessWidget {
                     ),
                   ]),
             ),
+            SizedBox(height: 300, child: Image.asset('assets/images/child.png'))
           ],
         ),
       ),

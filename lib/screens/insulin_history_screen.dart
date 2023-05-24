@@ -64,14 +64,12 @@ class _InsulinHistoryScreenState extends State<InsulinHistoryScreen> {
           InsulinEntry newEntry = await Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (BuildContext context) => AddInsulinEntryScreen(),
+              builder: (BuildContext context) => const AddInsulinEntryScreen(),
             ),
           );
-          if (newEntry != null) {
-            setState(() {
-              _insulinEntries.add(newEntry);
-            });
-          }
+          setState(() {
+            _insulinEntries.add(newEntry);
+          });
         },
         backgroundColor: Theme.of(context).primaryColor,
         child: const Icon(Icons.add),
@@ -93,6 +91,8 @@ class InsulinEntry {
 }
 
 class AddInsulinEntryScreen extends StatefulWidget {
+  const AddInsulinEntryScreen({super.key});
+
   @override
   _AddInsulinEntryScreenState createState() => _AddInsulinEntryScreenState();
 }
@@ -163,7 +163,7 @@ class _AddInsulinEntryScreenState extends State<AddInsulinEntryScreen> {
             const SizedBox(height: 16.0),
             ListTile(
               title: Text(
-                '${_selectedTime.hour}:${_selectedTime.minute}',
+                DateFormat('HH:mm').format(_selectedTime).toString(),
                 style: const TextStyle(fontSize: 18.0),
               ),
               onTap: () async {
@@ -192,7 +192,6 @@ class _AddInsulinEntryScreenState extends State<AddInsulinEntryScreen> {
         onPressed: () {
           String units = _unitsController.text;
 
-          //int unitsInt = int.parse(units);
           Navigator.pop(
             context,
             InsulinEntry(
