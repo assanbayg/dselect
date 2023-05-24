@@ -53,7 +53,7 @@ class _AddMealState extends State<AddMeal> {
           ElevatedButton(
             onPressed: () {
               setState(() {
-                Provider.of<Nutrition>(context).menu.add(Food(
+                Provider.of<Nutrition>(context, listen: false).menu.add(Food(
                     name: _nameController.text,
                     totalKcal: double.parse(_kcalController.text),
                     totalCarbohydrates: double.parse(_carbsController.text),

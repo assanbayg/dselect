@@ -1,10 +1,20 @@
 import 'package:flutter/widgets.dart';
 
 class Nutrition with ChangeNotifier {
-  double totalKcal = 1024;
-  double totalCarbohydrates = 420;
-  double totalProteins = 100;
-  double totalFats = 54;
+  double totalKcal = 0;
+  double totalCarbohydrates = 0;
+  double totalProteins = 0;
+  double totalFats = 0;
+
+  void updateStats(double kcal, carbs, proteins, fats) {
+    totalKcal += kcal;
+    totalCarbohydrates += carbs;
+    totalProteins += proteins;
+    totalFats += fats;
+    notifyListeners();
+  }
+
+  List<Food> eatedFood = [];
 
   List<Food> menu = [
     Food(

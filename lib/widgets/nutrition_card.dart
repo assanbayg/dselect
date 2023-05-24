@@ -2,14 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../providers/nutrition.dart';
 
-class NutritionCard extends StatelessWidget {
+class NutritionCard extends StatefulWidget {
   const NutritionCard({super.key});
 
+  @override
+  State<NutritionCard> createState() => _NutritionCardState();
+}
+
+class _NutritionCardState extends State<NutritionCard> {
   @override
   Widget build(BuildContext context) {
     ThemeData theme = Theme.of(context);
     Size size = MediaQuery.of(context).size;
-    var provider = Provider.of<Nutrition>(context);
 
     return Container(
       height: size.height * 0.15,
@@ -30,7 +34,7 @@ class NutritionCard extends StatelessWidget {
               borderRadius: BorderRadius.circular(20),
             ),
             child: Text(
-              '${provider.totalKcal.toInt()}\nkcal',
+              '${Provider.of<Nutrition>(context, listen: true).totalKcal.toInt()}\nkcal',
               style: theme.textTheme.bodyLarge!,
               textAlign: TextAlign.end,
             ),
@@ -76,9 +80,12 @@ class NutritionCard extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
-                  Text('${provider.totalCarbohydrates}g'),
-                  Text('${provider.totalProteins}g'),
-                  Text('${provider.totalFats}g'),
+                  Text(
+                      '${Provider.of<Nutrition>(context, listen: true).totalCarbohydrates.round()}g'),
+                  Text(
+                      '${Provider.of<Nutrition>(context, listen: true).totalProteins}g'),
+                  Text(
+                      '${Provider.of<Nutrition>(context, listen: true).totalFats.round()}g'),
                 ],
               ),
             ],

@@ -36,7 +36,7 @@ class _NutritionScreenState extends State<NutritionScreen> {
         onPressed: () {
           showModalBottomSheet(
             context: context,
-            builder: (context) => AddMeal(),
+            builder: (context) => const AddMeal(),
           );
         },
         backgroundColor: theme.primaryColor,

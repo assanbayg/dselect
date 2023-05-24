@@ -1,7 +1,9 @@
+// ignore_for_file: no_leading_underscores_for_local_identifiers
+
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import '../providers/nutrition.dart';
-import 'food_card.dart';
+import 'package:dselect/providers/nutrition.dart';
+import 'package:dselect/widgets/food_card.dart';
 
 class Menu extends StatefulWidget {
   const Menu({super.key});
@@ -36,6 +38,29 @@ class _MenuState extends State<Menu> {
 
     return Column(
       children: [
+        TextButton(
+          onPressed: () {
+            showModalBottomSheet(
+                context: context,
+                builder: (builder) {
+                  return Container(
+                    color: Colors.white,
+                    height: MediaQuery.of(context).size.height * 0.6,
+                    child: SingleChildScrollView(
+                      child: Column(
+                        children: Provider.of<Nutrition>(context)
+                            .eatedFood
+                            .map((e) => FoodCard(
+                                  food: e,
+                                ))
+                            .toList(),
+                      ),
+                    ),
+                  );
+                });
+          },
+          child: const Text('Eated food'),
+        ),
         TextField(
           controller: searchController,
           decoration: InputDecoration(
@@ -65,10 +90,7 @@ class _MenuState extends State<Menu> {
                   child: Column(
                     children: menu
                         .map((e) => FoodCard(
-                              name: e.name,
-                              link: e.imageUrl,
-                              bu: e.bu,
-                              kcal: e.totalKcal,
+                              food: e,
                             ))
                         .toList(),
                   ),

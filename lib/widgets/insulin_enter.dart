@@ -12,6 +12,7 @@ class InsulinEnter extends StatefulWidget {
 }
 
 class _InsulinEnterState extends State<InsulinEnter> {
+  TextEditingController glucoseLevelController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -93,17 +94,24 @@ class _InsulinEnterState extends State<InsulinEnter> {
                   SizedBox(
                     width: size.width * 0.15,
                     child: TextField(
+                      controller: glucoseLevelController,
                       keyboardType: TextInputType.number,
                       style: Theme.of(context).textTheme.bodyMedium,
                       onSubmitted: (value) {
                         Provider.of<GlucoseLevel>(context, listen: false)
                             .addNewValue(double.parse(value));
+                        glucoseLevelController.text = '';
                       },
                     ),
                   ),
                 ],
               ),
-              ElevatedButton(onPressed: () {}, child: const Text('Add')),
+              ElevatedButton(
+                  onPressed: () {
+                    Provider.of<GlucoseLevel>(context, listen: false)
+                        .addNewValue(double.parse(glucoseLevelController.text));
+                  },
+                  child: const Text('Add')),
             ],
           ),
         ],
