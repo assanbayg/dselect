@@ -1,15 +1,13 @@
 # dselect
 
-A new Flutter project.
+Mobile app for diabetes management.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+Either download zip file or clone this repository to your machine.
+Then type flutter run dselect on virtual or physical device. 
+Preferably android because I don't have mac to test it for IOS.
+Enjoy.
 
 For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
