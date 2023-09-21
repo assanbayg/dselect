@@ -1,20 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="NONE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="7b71a600-497a-4200-b314-a1cd547bc156" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/assets/fonts/Quicksand-Bold.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/fonts/Quicksand-Light.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/fonts/Quicksand-Medium.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/fonts/Quicksand-Regular.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/providers/glucose_level.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/providers/glucose_level.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/screens/chart_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/chart_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/screens/nav_bar.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/nav_bar.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/screens/tips_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/tips_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/theme.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/theme.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/widgets/insulin_enter.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/insulin_enter.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/widgets/my_drawer.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/my_drawer.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dselect.iml" beforeDir="false" afterPath="$PROJECT_DIR$/dselect.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,6 +15,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2Ox0uzqXOml0BxMpZthy2FRTWgc" />
   <component name="ProjectView">
@@ -42,7 +37,7 @@
     <property name="cidr.known.project.marker" value="true" />
     <property name="dart.analysis.tool.window.force.activate" value="true" />
     <property name="dart.analysis.tool.window.visible" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../helzy" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />

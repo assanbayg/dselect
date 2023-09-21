@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../custom_shape.dart';
 
-class CurvedAppBar extends StatelessWidget with PreferredSizeWidget {
+class CurvedAppBar extends StatelessWidget implements PreferredSizeWidget {
   String title;
   CurvedAppBar({
     super.key,
