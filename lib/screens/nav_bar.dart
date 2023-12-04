@@ -1,3 +1,4 @@
+import 'package:dselect/screens/chat_screen.dart';
 import 'package:dselect/screens/journey_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -18,12 +19,12 @@ class NavigationBarScreen extends StatefulWidget {
 class _NavigationBarScreenState extends State<NavigationBarScreen> {
   Color color = Colors.white;
   var selectedIndex = 0;
-  static const List<Widget> screens = [
+  List<Widget> screens = [
     HomeScreen(),
     ChartScreen(),
     NutritionScreen(),
     JourneyScreen(),
-    TipsScreen(),
+    ChatScreen(),
   ];
 
   Widget buildIcon(IconData icon) {
@@ -62,8 +63,7 @@ class _NavigationBarScreenState extends State<NavigationBarScreen> {
             topRight: Radius.circular(30.0),
           ),
           child: BottomNavigationBar(
-            showSelectedLabels: false,
-            showUnselectedLabels: false,
+            showUnselectedLabels: true,
             currentIndex: selectedIndex,
             unselectedItemColor: Colors.grey,
             selectedItemColor: Theme.of(context).primaryColor,
@@ -85,15 +85,15 @@ class _NavigationBarScreenState extends State<NavigationBarScreen> {
               ),
               BottomNavigationBarItem(
                 icon: buildIcon(Icons.restaurant_rounded),
-                label: 'Nutrition',
+                label: 'Diet',
               ),
               BottomNavigationBarItem(
                 icon: buildIcon(Icons.emoji_emotions),
-                label: 'Journey',
+                label: 'Learn',
               ),
               BottomNavigationBarItem(
-                icon: buildIcon(Icons.tips_and_updates_rounded),
-                label: 'Tips',
+                icon: buildIcon(Icons.chat_rounded),
+                label: 'Chat',
               ),
             ],
           ),

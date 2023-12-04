@@ -1,4 +1,5 @@
 import 'package:dselect/screens/insulin_history_screen.dart';
+import 'package:dselect/service/send_query.dart';
 import 'package:flutter/material.dart';
 
 import '../widgets/circle_chart.dart';
@@ -49,7 +50,7 @@ class HomeScreen extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 10),
         child: SingleChildScrollView(
           child: Column(
-            children: const [
+            children: [
               CircleChart(),
               InsulinEnter(),
             ],

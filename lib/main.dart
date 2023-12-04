@@ -9,9 +9,9 @@ import 'package:provider/provider.dart';
 
 import 'auth/login_screen.dart';
 import 'auth/sign_up_screen.dart';
-import 'firebase_options.dart';
+import 'auth/firebase_options.dart';
 import 'screens/insulin_history_screen.dart';
-import 'theme.dart';
+import 'theme/theme.dart';
 import 'providers/glucose_level.dart';
 import 'providers/insulin.dart';
 import 'providers/nutrition.dart';
