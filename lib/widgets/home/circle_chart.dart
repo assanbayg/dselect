@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import '../providers/glucose_level.dart';
+import '../../providers/glucose_level.dart';
 
 class CircleChart extends StatefulWidget {
   const CircleChart({super.key});

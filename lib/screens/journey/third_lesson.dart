@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import '../widgets/my_app_bar.dart';
+import 'package:dselect/widgets/journey/my_app_bar.dart';
 
 class Lesson3Page extends StatelessWidget {
   const Lesson3Page({super.key});

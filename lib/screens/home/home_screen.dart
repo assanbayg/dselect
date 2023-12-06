@@ -1,9 +1,9 @@
-import 'package:dselect/screens/insulin_history_screen.dart';
+import 'package:dselect/screens/home/insulin_history_screen.dart';
 import 'package:dselect/service/send_query.dart';
 import 'package:flutter/material.dart';
 
-import '../widgets/circle_chart.dart';
-import '../widgets/insulin_enter.dart';
+import '../../widgets/home/circle_chart.dart';
+import '../../widgets/home/insulin_enter.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});

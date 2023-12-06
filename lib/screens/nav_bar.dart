@@ -1,12 +1,11 @@
-import 'package:dselect/screens/chat_screen.dart';
-import 'package:dselect/screens/journey_screen.dart';
+import 'package:dselect/screens/chat/chat_screen.dart';
+import 'package:dselect/screens/journey/journey_screen.dart';
 import 'package:flutter/material.dart';
 
 import '../widgets/my_drawer.dart';
-import 'home_screen.dart';
-import 'chart_screen.dart';
-import 'nutrition_screen.dart';
-import 'tips_screen.dart';
+import 'home/home_screen.dart';
+import 'chart/chart_screen.dart';
+import 'nutrition/nutrition_screen.dart';
 
 class NavigationBarScreen extends StatefulWidget {
   static const routeName = '/nav-bar';

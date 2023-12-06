@@ -1,5 +1,5 @@
 import 'package:dselect/providers/lesson.dart';
-import 'package:dselect/widgets/my_app_bar.dart';
+import 'package:dselect/widgets/journey/my_app_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 

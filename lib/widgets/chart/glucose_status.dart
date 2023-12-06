@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import '../providers/glucose_level.dart';
+import '../../providers/glucose_level.dart';
 
 class GlucoseStatus extends StatefulWidget {
   const GlucoseStatus({super.key});

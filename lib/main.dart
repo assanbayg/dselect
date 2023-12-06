@@ -1,5 +1,5 @@
 import 'package:dselect/providers/lesson.dart';
-import 'package:dselect/screens/home_screen.dart';
+import 'package:dselect/screens/home/home_screen.dart';
 import 'package:dselect/screens/welcome_screen.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -10,14 +10,13 @@ import 'package:provider/provider.dart';
 import 'auth/login_screen.dart';
 import 'auth/sign_up_screen.dart';
 import 'auth/firebase_options.dart';
-import 'screens/insulin_history_screen.dart';
+import 'screens/home/insulin_history_screen.dart';
 import 'theme/theme.dart';
 import 'providers/glucose_level.dart';
 import 'providers/insulin.dart';
 import 'providers/nutrition.dart';
 import 'screens/nav_bar.dart';
-import 'screens/info_screen.dart';
-import 'screens/test_screen.dart';
+import 'screens/journey/info_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -67,7 +66,6 @@ class MyApp extends StatelessWidget {
           LoginScreen.routeName: (context) => const LoginScreen(),
           NavigationBarScreen.routeName: (context) =>
               const NavigationBarScreen(),
-          TestScreen.routeName: (context) => const TestScreen(),
           InfoScreen.routeName: (context) => const InfoScreen(),
           InsulinHistoryScreen.routeName: (context) => InsulinHistoryScreen(),
         },

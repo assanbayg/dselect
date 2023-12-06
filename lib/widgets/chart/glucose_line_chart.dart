@@ -2,7 +2,7 @@ import 'package:fl_chart/fl_chart.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter/material.dart';
 
-import '../providers/glucose_level.dart';
+import '../../providers/glucose_level.dart';
 
 class GlucoseLineChart extends StatefulWidget {
   const GlucoseLineChart({super.key});

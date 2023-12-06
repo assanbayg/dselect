@@ -2,7 +2,7 @@ import 'package:dselect/providers/glucose_level.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../providers/insulin.dart';
+import '../../providers/insulin.dart';
 
 class InsulinEnter extends StatefulWidget {
   const InsulinEnter({super.key});

@@ -1,9 +1,9 @@
-import 'package:dselect/widgets/add_meal.dart';
+import 'package:dselect/widgets/nutrition/add_meal.dart';
 import 'package:flutter/material.dart';
 
-import '../widgets/main_app_bar.dart';
-import '../widgets/nutrition_card.dart';
-import '../widgets/menu.dart';
+import '../../widgets/main_app_bar.dart';
+import '../../widgets/nutrition/nutrition_card.dart';
+import '../../widgets/nutrition/menu.dart';
 
 class NutritionScreen extends StatefulWidget {
   const NutritionScreen({super.key});

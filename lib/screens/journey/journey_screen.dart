@@ -1,4 +1,4 @@
-import 'package:dselect/screens/progress_map.dart';
+import 'package:dselect/screens/journey/progress_map.dart';
 import 'package:flutter/material.dart';
 
 class JourneyScreen extends StatelessWidget {

@@ -3,7 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:dselect/providers/nutrition.dart';
-import 'package:dselect/widgets/food_card.dart';
+import 'package:dselect/widgets/nutrition/food_card.dart';
 
 class Menu extends StatefulWidget {
   const Menu({super.key});

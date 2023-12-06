@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../providers/nutrition.dart';
+import '../../providers/nutrition.dart';
 
 class AddMeal extends StatefulWidget {
   const AddMeal({super.key});

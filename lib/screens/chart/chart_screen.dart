@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import '../widgets/glucose_status.dart';
-import '../widgets/main_app_bar.dart';
-import '../widgets/glucose_line_chart.dart';
+import '../../widgets/chart/glucose_status.dart';
+import '../../widgets/main_app_bar.dart';
+import '../../widgets/chart/glucose_line_chart.dart';
 
 class ChartScreen extends StatelessWidget {
   const ChartScreen({super.key});

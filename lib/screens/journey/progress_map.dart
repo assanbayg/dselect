@@ -1,7 +1,7 @@
 import 'package:dselect/providers/lesson.dart';
-import 'package:dselect/screens/first_lesson.dart';
-import 'package:dselect/screens/second_lesson.dart';
-import 'package:dselect/screens/third_lesson.dart';
+import 'package:dselect/screens/journey/first_lesson.dart';
+import 'package:dselect/screens/journey/second_lesson.dart';
+import 'package:dselect/screens/journey/third_lesson.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
