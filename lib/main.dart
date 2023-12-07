@@ -1,8 +1,7 @@
 import 'package:dselect/providers/lesson.dart';
-import 'package:dselect/screens/home/home_screen.dart';
-import 'package:dselect/screens/welcome_screen.dart';
+import 'package:dselect/providers/user_provider.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -18,11 +17,10 @@ import 'providers/nutrition.dart';
 import 'screens/nav_bar.dart';
 import 'screens/journey/info_screen.dart';
 
-void main() async {
+Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform,
-  );
+  await dotenv.load(fileName: ".env");
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   runApp(const MyApp());
 }
 
@@ -33,41 +31,27 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
+        ChangeNotifierProvider(create: (context) => UserProvider()),
         ChangeNotifierProvider(create: (context) => GlucoseLevel()),
         ChangeNotifierProvider(create: (context) => Insulin()),
         ChangeNotifierProvider(create: (context) => Nutrition()),
-        ChangeNotifierProvider(
-          create: (context) => Lessons(),
-        )
+        ChangeNotifierProvider(create: (context) => Lessons()),
       ],
       child: MaterialApp(
         localizationsDelegates: AppLocalizations.localizationsDelegates,
         supportedLocales: AppLocalizations.supportedLocales,
-        // localizationsDelegates: const [
-        //   AppLocalizations.delegate,
-        //   GlobalMaterialLocalizations.delegate,
-        //   GlobalWidgetsLocalizations.delegate,
-        //   GlobalCupertinoLocalizations.delegate,
-        // ],
-        // supportedLocales: const [
-        //   Locale('en'), // English
-        //   Locale('ru'), // Russian
-        //   Locale('kk'), //Kazakh
-        // ],
         debugShowCheckedModeBanner: false,
         title: 'DSelect',
         theme: basisTheme(),
-        // home: const WelcomeScreen(),
-        // initialRoute: WelcomeScreen.routeName,
-        home: NavigationBarScreen(),
-
+        home: const NavigationBarScreen(),
         routes: {
           SignUpScreen.routeName: (context) => const SignUpScreen(),
           LoginScreen.routeName: (context) => const LoginScreen(),
           NavigationBarScreen.routeName: (context) =>
               const NavigationBarScreen(),
           InfoScreen.routeName: (context) => const InfoScreen(),
-          InsulinHistoryScreen.routeName: (context) => InsulinHistoryScreen(),
+          InsulinHistoryScreen.routeName: (context) =>
+              const InsulinHistoryScreen(),
         },
       ),
     );
