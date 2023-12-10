@@ -7,8 +7,9 @@ class UserService {
 
   Future<Map<String, dynamic>> registerUser(
       Map<String, dynamic> userData) async {
+    print(jsonEncode(userData));
     final response = await http.post(
-      Uri.parse('$baseUrl/user/'),
+      Uri.parse('$baseUrl/users/'),
       headers: {'Content-Type': 'application/json'},
       body: jsonEncode(userData),
     );

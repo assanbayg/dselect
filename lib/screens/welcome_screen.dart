@@ -15,9 +15,8 @@ class WelcomeScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             SizedBox(
-              height: MediaQuery.of(context).size.height * 0.2,
-              child: Image.asset('assets/icons/logo.png'),
-            ),
+                height: MediaQuery.of(context).size.height * 0.2,
+                child: Image.asset('assets/icons/logo.png')),
             Container(
               margin: const EdgeInsets.symmetric(vertical: 20),
               child: Text(

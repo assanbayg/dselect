@@ -1,4 +1,4 @@
-# dselect
+# DSelect
 
 Mobile app for diabetes management.
 

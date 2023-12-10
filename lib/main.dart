@@ -1,5 +1,6 @@
 import 'package:dselect/providers/lesson.dart';
 import 'package:dselect/providers/user_provider.dart';
+import 'package:dselect/screens/welcome_screen.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -43,7 +44,8 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: 'DSelect',
         theme: basisTheme(),
-        home: const NavigationBarScreen(),
+        // home: const NavigationBarScreen(),
+        home: WelcomeScreen(),
         routes: {
           SignUpScreen.routeName: (context) => const SignUpScreen(),
           LoginScreen.routeName: (context) => const LoginScreen(),
