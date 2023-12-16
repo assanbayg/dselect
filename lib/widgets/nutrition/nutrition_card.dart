@@ -43,12 +43,12 @@ class _NutritionCardState extends State<NutritionCard> {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Column(
+              const Column(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Row(
-                    children: const [
+                    children: [
                       SizedBox(
                         height: 15,
                         child: CircleAvatar(backgroundColor: Colors.red),
@@ -57,7 +57,7 @@ class _NutritionCardState extends State<NutritionCard> {
                     ],
                   ),
                   Row(
-                    children: const [
+                    children: [
                       SizedBox(
                         height: 15,
                         child: CircleAvatar(backgroundColor: Colors.green),
@@ -66,7 +66,7 @@ class _NutritionCardState extends State<NutritionCard> {
                     ],
                   ),
                   Row(
-                    children: const [
+                    children: [
                       SizedBox(
                         height: 15,
                         child: CircleAvatar(backgroundColor: Colors.yellow),

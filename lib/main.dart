@@ -1,5 +1,7 @@
 import 'package:dselect/providers/lesson.dart';
 import 'package:dselect/providers/user_provider.dart';
+import 'package:dselect/screens/chat/chat_screen.dart';
+import 'package:dselect/screens/home/glucose_level_history_screen.dart';
 import 'package:dselect/screens/welcome_screen.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -44,8 +46,8 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: 'DSelect',
         theme: basisTheme(),
-        // home: const NavigationBarScreen(),
-        home: WelcomeScreen(),
+        home: const NavigationBarScreen(),
+        // home: ChatScreen(),
         routes: {
           SignUpScreen.routeName: (context) => const SignUpScreen(),
           LoginScreen.routeName: (context) => const LoginScreen(),
@@ -54,6 +56,8 @@ class MyApp extends StatelessWidget {
           InfoScreen.routeName: (context) => const InfoScreen(),
           InsulinHistoryScreen.routeName: (context) =>
               const InsulinHistoryScreen(),
+          GlucoseLevelHistoryScreen.routeName: (context) =>
+              const GlucoseLevelHistoryScreen(),
         },
       ),
     );

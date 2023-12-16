@@ -12,11 +12,11 @@ class Lesson2Page extends StatelessWidget {
       appBar: MyAppBar(
         title: 'Understanding Carbohydrates and Bread Units',
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
+      body: const Padding(
+        padding: EdgeInsets.all(16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: const [
+          children: [
             Text(
               'What are carbohydrates?',
               style: TextStyle(

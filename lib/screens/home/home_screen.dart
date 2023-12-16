@@ -1,5 +1,4 @@
 import 'package:dselect/screens/home/insulin_history_screen.dart';
-import 'package:dselect/service/send_query.dart';
 import 'package:flutter/material.dart';
 
 import '../../widgets/home/circle_chart.dart';

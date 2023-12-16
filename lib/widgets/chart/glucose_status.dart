@@ -15,7 +15,7 @@ class _GlucoseStatusState extends State<GlucoseStatus> {
     TextStyle style =
         Theme.of(context).textTheme.bodyLarge!.copyWith(color: Colors.white);
     var provider = Provider.of<GlucoseLevel>(context);
-    double value = provider.glucoseLevelList.last;
+    List<double> glucoseList = provider.glucoseLevelList;
     double min = provider.min;
     double max = provider.max;
 

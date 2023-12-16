@@ -40,7 +40,7 @@ class JourneyScreen extends StatelessWidget {
                         child: Image.asset('assets/images/irbis.png')),
                   ],
                 ),
-                ProgressMapWidget(),
+                const ProgressMapWidget(),
               ],
             ),
           ],

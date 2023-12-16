@@ -1,6 +1,11 @@
+import 'dart:developer';
+
+import 'package:dselect/service/blood_level_service.dart';
 import 'package:flutter/material.dart';
 
 class GlucoseLevel with ChangeNotifier {
+  final BloodLevelService _bloodLevelService = BloodLevelService();
+
   //normal range is 3.3-5.5 mmol/L
   Map<String, double> glucoseLevelRange = {
     'low': 3.3,
@@ -8,33 +13,8 @@ class GlucoseLevel with ChangeNotifier {
     'extreme': 15.5,
   };
 
-  List<double> glucoseLevelList = [
-    11.7,
-    10.4,
-    9.8,
-    14.7,
-    14,
-    13.5,
-    12,
-    13.8,
-    14.5,
-    15.5,
-    13,
-    11,
-    5,
-    10.8,
-    9,
-    6,
-    8.9,
-    9.7,
-    10.9,
-    10.4,
-    11.6,
-    8.7,
-    7.5,
-    5.9,
-    6.6,
-  ];
+  List<double> glucoseLevelList = [5, 5];
+  List<Map<String, dynamic>> glucoseLevelDataList = [];
 
   double get max {
     double maxVal = 0.0;
@@ -56,9 +36,22 @@ class GlucoseLevel with ChangeNotifier {
     return minVal;
   }
 
-  void addNewValue(double newVal) {
-    glucoseLevelList.add(newVal);
-    glucoseLevelList.removeAt(0);
+  Future<void> fetchBloodLevels() async {
+    print("FETTch");
+    final List<Map<String, dynamic>> bloodLevels =
+        await _bloodLevelService.getBloodLevels();
+
+    glucoseLevelList = bloodLevels
+        .map((bloodLevel) => double.parse(bloodLevel['level'].toString()))
+        .toList();
+
+    glucoseLevelDataList = bloodLevels;
+    log(glucoseLevelList.toString());
     notifyListeners();
+  }
+
+  Future<void> addNewValue(double newVal) async {
+    await _bloodLevelService.createBloodLevel({'level': newVal});
+    fetchBloodLevels();
   }
 }

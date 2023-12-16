@@ -1,3 +1,4 @@
+import 'package:dselect/widgets/chart/glucose_status.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../providers/glucose_level.dart';
@@ -11,8 +12,18 @@ class CircleChart extends StatefulWidget {
 
 class _CircleChartState extends State<CircleChart> {
   @override
+  void initState() {
+    GlucoseLevel glucoseLevelProvider =
+        Provider.of<GlucoseLevel>(context, listen: false);
+    glucoseLevelProvider.fetchBloodLevels();
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
+    List<double> glucoseLevelList =
+        Provider.of<GlucoseLevel>(context).glucoseLevelList;
     double glucoseLevel =
         Provider.of<GlucoseLevel>(context).glucoseLevelList.last;
     Map<String, double> glucoseLevelRange =

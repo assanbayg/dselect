@@ -8,7 +8,7 @@ class Insulin with ChangeNotifier {
     'mixed',
     'long-acting',
   ];
-  List<int> _dose = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+  final List<int> _dose = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
   List<String> get insulinTypes => _insulinTypes;
   List<int> get dose => _dose;
@@ -34,14 +34,14 @@ class _AddInsulinEntryScreenState extends State<AddInsulinEntryScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Add Insulin Entry'),
+        title: const Text('Add Insulin Entry'),
       ),
       body: Padding(
-        padding: EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
+            const Text(
               'Enter the number of units:',
               style: TextStyle(fontSize: 18.0),
             ),
@@ -49,16 +49,16 @@ class _AddInsulinEntryScreenState extends State<AddInsulinEntryScreen> {
               controller: _unitsController,
               keyboardType: TextInputType.number,
             ),
-            SizedBox(height: 16.0),
-            Text(
+            const SizedBox(height: 16.0),
+            const Text(
               'Select the time of your insulin injection:',
               style: TextStyle(fontSize: 18.0),
             ),
-            SizedBox(height: 16.0),
+            const SizedBox(height: 16.0),
             ListTile(
               title: Text(
                 '${_selectedTime.hour}:${_selectedTime.minute}',
-                style: TextStyle(fontSize: 18.0),
+                style: const TextStyle(fontSize: 18.0),
               ),
               onTap: () async {
                 TimeOfDay? selectedTime = await showTimePicker(
@@ -89,14 +89,14 @@ class _AddInsulinEntryScreenState extends State<AddInsulinEntryScreen> {
               context: context,
               builder: (BuildContext context) {
                 return AlertDialog(
-                  title: Text('Error'),
-                  content: Text('Please enter the number of units.'),
+                  title: const Text('Error'),
+                  content: const Text('Please enter the number of units.'),
                   actions: [
                     TextButton(
                       onPressed: () {
                         Navigator.pop(context);
                       },
-                      child: Text('OK'),
+                      child: const Text('OK'),
                     ),
                   ],
                 );
@@ -110,7 +110,7 @@ class _AddInsulinEntryScreenState extends State<AddInsulinEntryScreen> {
             );
           }
         },
-        child: Icon(Icons.check),
+        child: const Icon(Icons.check),
       ),
     );
   }

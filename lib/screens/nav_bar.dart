@@ -19,10 +19,10 @@ class _NavigationBarScreenState extends State<NavigationBarScreen> {
   Color color = Colors.white;
   var selectedIndex = 0;
   List<Widget> screens = [
-    HomeScreen(),
-    ChartScreen(),
-    NutritionScreen(),
-    JourneyScreen(),
+    const HomeScreen(),
+    const ChartScreen(),
+    const NutritionScreen(),
+    const JourneyScreen(),
     ChatScreen(),
   ];
 
@@ -69,7 +69,7 @@ class _NavigationBarScreenState extends State<NavigationBarScreen> {
             onTap: (value) => setState(() {
               selectedIndex = value;
               if (value == 3) {
-                color = Color.fromRGBO(85, 139, 47, 1);
+                color = const Color.fromRGBO(85, 139, 47, 1);
               } else
                 color = Colors.white;
             }),
@@ -98,7 +98,7 @@ class _NavigationBarScreenState extends State<NavigationBarScreen> {
           ),
         ),
       ),
-      drawer: MyDrawer(),
+      drawer: const MyDrawer(),
     );
   }
 }

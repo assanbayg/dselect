@@ -10,11 +10,11 @@ class Lesson3Page extends StatelessWidget {
       appBar: MyAppBar(
         title: 'Why There\'s Nothing to Fear About Diabetes',
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
+      body: const Padding(
+        padding: EdgeInsets.all(16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: const [
+          children: [
             Text(
               'What is diabetes?',
               style: TextStyle(

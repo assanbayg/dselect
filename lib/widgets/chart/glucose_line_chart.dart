@@ -44,8 +44,8 @@ class _GlucoseLineChartState extends State<GlucoseLineChart> {
   }
 
   LineChartData mainData() {
-    List<double> glucoseList =
-        Provider.of<GlucoseLevel>(context).glucoseLevelList;
+    List<double> glucoseList = Provider.of<GlucoseLevel>(context)
+        .glucoseLevelList;
 
     double max = glucoseList.last;
     double min = glucoseList.last;
@@ -116,8 +116,8 @@ class _GlucoseLineChartState extends State<GlucoseLineChart> {
   }
 
   LineChartData avgData() {
-    List<double> glucoseList =
-        Provider.of<GlucoseLevel>(context).glucoseLevelList;
+    List<double> glucoseList = Provider.of<GlucoseLevel>(context)
+        .glucoseLevelList;
 
     double max = glucoseList.last;
     double min = glucoseList.last;

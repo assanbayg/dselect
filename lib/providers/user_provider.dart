@@ -14,9 +14,7 @@ class UserProvider with ChangeNotifier {
   Future<void> registerUser(Map<String, dynamic> userData) async {
     try {
       final result = await _userService.registerUser(userData);
-      // Handle successful registration: update user data, set is logged in and other stuff
     } catch (error) {
-      // Handle registration failure (also later)
       print('Error registering user: $error');
       rethrow;
     }
