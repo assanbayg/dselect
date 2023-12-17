@@ -2,8 +2,10 @@ import 'package:dselect/providers/chat_provider.dart';
 import 'package:dselect/service/chat_service.dart';
 import 'package:dselect/widgets/main_app_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class ChatScreen extends StatefulWidget {
+  static const routeName = 'navbar/chat';
   const ChatScreen({super.key});
 
   @override
@@ -13,14 +15,22 @@ class ChatScreen extends StatefulWidget {
 class ChatScreenState extends State<ChatScreen> {
   ChatService chatService = ChatService();
   ChatProvider provider = ChatProvider();
+  bool isVisible = false;
 
   final TextEditingController _textController = TextEditingController();
-  final List<ChatMessage> _messages = ChatProvider().getMessages();
+  List<ChatMessage> _messages = [];
 
   @override
   void initState() {
-    chatService.loadQuestion();
     super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      _initializeMessages();
+    });
+  }
+
+  Future<void> _initializeMessages() async {
+    _messages = Provider.of<ChatProvider>(context, listen: false).chatMessages;
+    await ChatProvider().getMessages();
   }
 
   void _handleSubmitted(String text) {
@@ -38,9 +48,8 @@ class ChatScreenState extends State<ChatScreen> {
     provider.addNewMessage(text);
     chatService.sendQuestion(text);
 
-    Future.delayed(const Duration(seconds: 1), () {
-      _addBotMessage(
-          'Diabetes is a health condition where the body has trouble using or making a hormone called insulin. Insulin helps the body use sugar for energy. When someone has diabetes, their blood sugar levels can become too high, which can lead to health problems.');
+    Future.delayed(const Duration(seconds: 3), () {
+      _addBotMessage(_messages.last.text);
     });
   }
 
@@ -60,12 +69,24 @@ class ChatScreenState extends State<ChatScreen> {
       appBar: const MainAppBar(title: 'Diabetes Chat Bot'),
       body: Column(
         children: [
-          Expanded(
-            child: ListView.builder(
-              itemCount: _messages.length,
-              itemBuilder: (context, index) => _messages[index],
-            ),
-          ),
+          isVisible
+              ? Container()
+              : Center(
+                  child: ElevatedButton(
+                      onPressed: () {
+                        setState(() {
+                          isVisible = true;
+                        });
+                      },
+                      child: Text('Load all'))),
+          isVisible
+              ? (Expanded(
+                  child: ListView.builder(
+                    itemCount: _messages.length,
+                    itemBuilder: (context, index) => _messages[index],
+                  ),
+                ))
+              : Container(),
           const Divider(height: 1.0),
           Container(
             decoration: BoxDecoration(

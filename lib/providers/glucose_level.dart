@@ -37,7 +37,6 @@ class GlucoseLevel with ChangeNotifier {
   }
 
   Future<void> fetchBloodLevels() async {
-    print("FETTch");
     final List<Map<String, dynamic>> bloodLevels =
         await _bloodLevelService.getBloodLevels();
 

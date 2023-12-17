@@ -24,37 +24,31 @@ class _GlucoseLevelHistoryScreenState extends State<GlucoseLevelHistoryScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Glucose Level History')),
-      body: Consumer<GlucoseLevel>(
-        builder: (ctx, glucoseLevels, _) => ListView.builder(
-          itemCount: glucoseLevels.glucoseLevelDataList.length,
-          itemBuilder: (ctx, i) => ListTile(
-            leading: Text(
-              DateFormat('HH:mm')
-                  .format(DateTime.parse(
-                      glucoseLevels.glucoseLevelDataList[i]['timestamp']))
-                  .toString(),
-              style: const TextStyle(fontSize: 18.0),
-            ),
-            title: Text(
-              '${glucoseLevels.glucoseLevelDataList[i]['level']} mmol/L',
-              style: const TextStyle(fontSize: 18.0),
-            ),
-            subtitle: Text(
-              DateFormat('yyyy-MM-dd HH:mm')
-                  .format(DateTime.parse(
-                      glucoseLevels.glucoseLevelDataList[i]['timestamp']))
-                  .toString(),
-              style: const TextStyle(fontSize: 14.0),
+        appBar: AppBar(title: const Text('Glucose Level History')),
+        body: Consumer<GlucoseLevel>(
+          builder: (ctx, glucoseLevels, _) => ListView.builder(
+            itemCount: glucoseLevels.glucoseLevelDataList.length,
+            itemBuilder: (ctx, i) => ListTile(
+              leading: Text(
+                DateFormat('HH:mm')
+                    .format(DateTime.parse(
+                        glucoseLevels.glucoseLevelDataList[i]['timestamp']))
+                    .toString(),
+                style: const TextStyle(fontSize: 18.0),
+              ),
+              title: Text(
+                '${glucoseLevels.glucoseLevelDataList[i]['level']} mmol/L',
+                style: const TextStyle(fontSize: 18.0),
+              ),
+              subtitle: Text(
+                DateFormat('yyyy-MM-dd HH:mm')
+                    .format(DateTime.parse(
+                        glucoseLevels.glucoseLevelDataList[i]['timestamp']))
+                    .toString(),
+                style: const TextStyle(fontSize: 14.0),
+              ),
             ),
           ),
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () async {},
-        backgroundColor: Theme.of(context).primaryColor,
-        child: const Icon(Icons.add),
-      ),
-    );
+        ));
   }
 }

@@ -33,6 +33,13 @@ class _InsulinHistoryScreenState extends State<InsulinHistoryScreen> {
   ];
 
   @override
+  void initState() {
+    InsulinEntryProvider provider = InsulinEntryProvider();
+    provider.fetchInsulinTakes();
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: MyAppBar(title: 'Insulin History'),
@@ -143,7 +150,9 @@ class _AddInsulinEntryScreenState extends State<AddInsulinEntryScreen> {
                   value: type,
                   style: Theme.of(context).textTheme.bodyMedium,
                   onChanged: (val) {
-                    type = val ?? 'rapid-acting';
+                    setState(() {
+                      type = val ?? 'Rapid-acting';
+                    });
                   },
                   items: insulinTypes
                       .map<DropdownMenuItem<String>>((String value) {

@@ -15,6 +15,7 @@ ThemeData basisTheme() => ThemeData(
       primaryColor: primaryColor,
       scaffoldBackgroundColor: Colors.white,
       fontFamily: fontNameDefault,
+      iconTheme: const IconThemeData(color: Colors.white),
       textTheme: const TextTheme(
         bodySmall: TextStyle(color: colorText, fontSize: smallTextSize),
         bodyMedium: TextStyle(color: colorText, fontSize: mediumTextSize),

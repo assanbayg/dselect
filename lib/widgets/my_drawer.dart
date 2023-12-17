@@ -67,7 +67,7 @@ class _MyDrawerState extends State<MyDrawer> {
           buildListTile('Insulin History', Icons.history, () {
             Navigator.of(context).pushNamed(InsulinHistoryScreen.routeName);
           }),
-          buildListTile('Notifications', Icons.notifications_rounded, () {}),
+          // buildListTile('Notifications', Icons.notifications_rounded, () {}),
         ]),
       ),
     );

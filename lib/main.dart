@@ -1,3 +1,4 @@
+import 'package:dselect/providers/chat_provider.dart';
 import 'package:dselect/providers/lesson.dart';
 import 'package:dselect/providers/user_provider.dart';
 import 'package:dselect/screens/chat/chat_screen.dart';
@@ -39,6 +40,7 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (context) => Insulin()),
         ChangeNotifierProvider(create: (context) => Nutrition()),
         ChangeNotifierProvider(create: (context) => Lessons()),
+        ChangeNotifierProvider(create: (context) => ChatProvider()),
       ],
       child: MaterialApp(
         localizationsDelegates: AppLocalizations.localizationsDelegates,
@@ -58,6 +60,7 @@ class MyApp extends StatelessWidget {
               const InsulinHistoryScreen(),
           GlucoseLevelHistoryScreen.routeName: (context) =>
               const GlucoseLevelHistoryScreen(),
+          ChatScreen.routeName: (context) => const ChatScreen(),
         },
       ),
     );
